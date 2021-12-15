@@ -1,0 +1,15 @@
+:root {
+  // Colors
+  --clr-primary-soft-blue: hsl(215, 51%, 70%);
+  --clr-primary-cyan: hsl(178, 100%, 50%);
+  --clr-dark-blue-1: hsl(217, 54%, 11%);
+  --clr-dark-blue-2: hsl(216, 52%, 16%);
+  --clr-dark-blue-3: hsl(215, 32%, 27%);
+  --clr-dark-blue-4: hsl(214, 20%, 44%);
+  --clr-white: hsl(0,0%,100%);
+  --clr-turqoise: hsl(181, 68%, 49%);
+}
+
+// Sizes
+$bp-desktop: 144rem;
+$bp-mobile: 37.5rem;

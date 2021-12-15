@@ -1,0 +1,18 @@
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1 rem = 10px -> 10/16
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--clr-dark-blue-1);
+}
+
+img {
+  max-width: 100%;
+}
