@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style/style.css">
+
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; margin-bottom: 1rem; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <article class="card">
+      <figure class="nft">
+        <div class="nft__logo-box">
+          <img src="./images/image-equilibrium.jpg" alt="Equilibrium" class="nft__logo">
+          <img src="./images/icon-view.svg" alt="view" class="nft__view">
+        </div>
+        <figcaption class="nft__caption">Equilibrium #3429</figcaption>
+        <p class="nft__description u-mb-medium">Our Equilibrium collection promotes balance and calm.</p>
+      </figure>
+      <div class="current-status u-mb-medium">
+        <div class="current-status__value">
+          <img src="./images/icon-ethereum.svg" alt="etherium">
+          <span class="u-ml-xxxsmall">0.041 ETH</span>
+        </div>
+        <div class="current-status__time">
+          <img src="./images/icon-clock.svg" alt="clock">
+          <span class="u-ml-xxxsmall">3 days left</span>
+        </div>
+      </div>
+      <div class="separator">&nbsp;</div>
+      <footer class="author">
+        <img src="./images/image-avatar.png" alt="avatar" class="author__photo">
+        <p class="author__name">Creation of<span class="author__name--creator">Jules Wyvern</span></p>
+      </footer>
+    </article>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/ahmetayyildiz66/projects">Ahmet AYYILDIZ</a>.
+  </div>
+</body>
+</html>
