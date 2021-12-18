@@ -24,11 +24,41 @@
         font-weight: 700;
     }
 
+    &__description {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--clr-gray-dark-1);
+
+        & > span {
+            position: relative;
+
+            &:not(:last-child) {
+                margin-right: 2.4rem;
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    top: 40%;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    margin-left: .8rem;
+                    background-color: var(--clr-gray-light-3);
+                }
+            }
+        }
+    }
+
     &__tags {
         justify-self: end;
     }
 
     &:not(:last-child) {
         margin-bottom: 2.4rem;
+    }
+
+    &--featured {
+        border-left: .5rem solid var(--clr-green-1);
     }
 }

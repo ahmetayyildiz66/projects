@@ -20,3 +20,12 @@ body {
     grid-template-columns: 8.8rem 26.6rem 1fr;
     margin: 0 auto;
 }
+
+.label__list {
+    list-style: none;
+    display: flex;
+
+    & > *:not(:last-child) {
+        margin-right: 1.6rem;
+    }
+}
