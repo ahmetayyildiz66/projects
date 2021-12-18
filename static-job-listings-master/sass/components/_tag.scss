@@ -1,0 +1,16 @@
+.tag {
+    border-radius: 100px;
+    padding: .7rem;
+    margin: 0 .4rem;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: var(--clr-white);
+
+    &--new {
+        background-color: var(--clr-green-1);
+    }
+
+    &--featured {
+        background-color: var(--clr-gray-dark-3);
+    }
+}

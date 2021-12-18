@@ -1,0 +1,22 @@
+body {
+    max-width: 136rem;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    height: 15.6rem;
+    background-image: url(../images/bg-header-desktop.svg), linear-gradient(var(--gradient-colors));
+}
+
+.main {
+    background-color: var(--clr-main-bg);
+    padding: 7.6rem 0;
+}
+
+.job-post {
+    width: 111rem;
+    display: grid;
+    grid-template-columns: 8.8rem 26.6rem 1fr;
+    margin: 0 auto;
+}

@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="css/style.css">
+
   <title>Frontend Mentor | Job Listings</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,8 +16,55 @@
   </style>
 </head>
 <body>
+  <header class="header">
+  </header>
+  <main class="main">
+
+    <section class="job-post">
+      	<img src="./images/photosnap.svg" alt="Photo snap logo" class="job-post__logo">
+		<div class="job-post__info">
+			<p class="job-post__company">
+				Photosnap
+				<span class="tag tag--new">
+					new!
+				</span>
+				<span class="tag tag--featured">
+					featured
+				</span>
+			</p>
+			<h3 class="job-post__title">
+				Senior Frontend Developer
+			</h3>
+			<p class="job-post__description">
+				<span>
+					1d ago
+				</span>
+				<span>
+					Full Time
+				</span>
+				<span>
+					USA only
+				</span>
+			</p>
+		</div>
+		<div class="job-post__tags">
+			Frontend
+		</div>
+    </section>
+
+    <section class="job-post">
+		<img src="./images/photosnap.svg" alt="Photo snap logo" class="job-post__logo">
+		<div class="job-post__info">
+			Senior Frontend Developer
+		</div>
+		<div class="job-post__tags">
+			Frontend
+		</div>
+    </section>
+
+  </main>
   <!-- Item Start -->
-  Photosnap
+  <div>Photosnap</div>
   New!
   Featured
   Senior Frontend Developer
@@ -184,9 +232,9 @@
   React
   Sass
   <!-- Item End -->
-  
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>

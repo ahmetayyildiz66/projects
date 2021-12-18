@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Spartan:wght@500;700&display=swap");
+:root {
+  --clr-gray-light-1: hsl(180, 52%, 96%);
+  --clr-gray-light-2: hsl(180, 31%, 95%);
+  --clr-gray-dark-1: hsl(180, 8%, 52%);
+  --clr-gray-dark-2: rgb(44, 58, 58);
+  --clr-gray-dark-3: #2b3939;
+  --clr-main-bg: #effafa;
+  --clr-green-1: #5ca5a5;
+  --clr-white: #fff;
+  --gradient-colors: #63baba, #5ca5a5; }
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Spartan', sans-serif;
+  font-size: 1.5rem; }
+
+body {
+  max-width: 136rem;
+  margin: 0 auto; }
+
+.header {
+  text-align: center;
+  height: 15.6rem;
+  background-image: url(../images/bg-header-desktop.svg), linear-gradient(var(--gradient-colors)); }
+
+.main {
+  background-color: var(--clr-main-bg);
+  padding: 7.6rem 0; }
+
+.job-post {
+  width: 111rem;
+  display: grid;
+  grid-template-columns: 8.8rem 26.6rem 1fr;
+  margin: 0 auto; }
+
+.tag {
+  border-radius: 100px;
+  padding: .7rem;
+  margin: 0 .4rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: var(--clr-white); }
+  .tag--new {
+    background-color: var(--clr-green-1); }
+  .tag--featured {
+    background-color: var(--clr-gray-dark-3); }
+
+.job-post {
+  align-items: center;
+  gap: 2.4rem;
+  padding: 3.2rem 4rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: .5rem;
+  background-color: var(--clr-white); }
+  .job-post__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; }
+  .job-post__company {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--clr-green-1); }
+  .job-post__title {
+    font-size: 1.8rem;
+    font-weight: 700; }
+  .job-post__tags {
+    justify-self: end; }
+  .job-post:not(:last-child) {
+    margin-bottom: 2.4rem; }
