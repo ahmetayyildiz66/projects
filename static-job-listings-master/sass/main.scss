@@ -1,4 +1,5 @@
-@import './variables';
+@import './abstract/variables';
+@import './abstract/mixins/breakpoints';
 @import './base';
 @import './typography';
 @import './layout';

@@ -7,6 +7,9 @@ body {
     text-align: center;
     height: 15.6rem;
     background-image: url(../images/bg-header-desktop.svg), linear-gradient(var(--gradient-colors));
+    @include respond($bp-mobile) {
+        background-image: url(../images/bg-header-mobile.svg), linear-gradient(var(--gradient-colors));
+    }
 }
 
 .main {
@@ -15,10 +18,16 @@ body {
 }
 
 .job-post {
-    width: 111rem;
+    width: 82%;
     display: grid;
     grid-template-columns: 8.8rem 26.6rem 1fr;
     margin: 0 auto;
+
+    @include respond($bp-mobile) {
+        // grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        margin: 0 2.4rem;
+    }
 }
 
 .label__list {

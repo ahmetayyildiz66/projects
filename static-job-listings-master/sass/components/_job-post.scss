@@ -6,28 +6,65 @@
     border-radius: .5rem;
     background-color: var(--clr-white);
 
+    @include respond($bp-mobile) {
+        position: relative;
+        width: 32.7rem;
+        height: 25.7rem;
+    }
+
+    &__logo {
+        @include respond($bp-mobile) {
+            position: absolute;
+            width: 4.8rem;
+            top: -2.4rem;
+            left: 2.4rem;
+        }
+    }
+
     &__info {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
+
+        @include respond($bp-mobile) {
+            display: block;
+            & > *:not(:last-child) {
+                margin-bottom: .8rem;
+            }
+        }
     }
 
     &__company {
         font-size: 1.4rem;
         font-weight: 700;
         color: var(--clr-green-1);
+
+        @include respond($bp-mobile) {
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
     }
 
     &__title {
         font-size: 1.8rem;
         font-weight: 700;
+
+        @include respond($bp-mobile) {
+            font-size: 1.5rem;
+            display: block;
+        }
     }
 
     &__description {
         font-size: 1.5rem;
         font-weight: 500;
         color: var(--clr-gray-dark-1);
+
+        @include respond($bp-mobile) {
+            margin-bottom: 1.6rem;
+        }
 
         & > span {
             position: relative;

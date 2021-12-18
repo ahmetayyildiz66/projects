@@ -1,0 +1,10 @@
+// $tablet-landspace-large: 1200px;
+$bp-desktop: 1140px;
+$bp-mobile: 375px;
+
+@mixin respond($breakpoint) {
+    // $breakpointValue: $breakpoint / 16px * 1em;
+    @media (max-width: ($breakpoint / 16px * 1em)) {
+        @content;
+    }
+}
