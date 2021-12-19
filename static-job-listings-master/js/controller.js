@@ -153,62 +153,69 @@ const jobsListings = [
     }
 ]
 
-function renderJobListings() {
-    return jobsListings.map(renderJob).join('')
+function renderTags() {
+  jobsListings.map(item) => `
+    <div class="job-post__tags">
+			<ul class="label__list">
+				<li class="label">
+					Frontend
+				</li>
+				<li class="label">
+					Senior
+				</li>
+				<li class="label">
+					HTML
+				</li>
+				<li class="label">
+					CSS
+				</li>
+				<li class="label">
+					JavaScript
+				</li>
+			</ul>
+		</div>
+    `;
 }
 
 function renderJob(jobItem) {
-    console.log('jobItem: ', jobItem)
-    return `
-    <section class="job-post job-post--featured">
-        <img src="${jobItem.logo}" alt="${jobItem.company} logo" class="job-post__logo">
-        <div class="job-post__info">
-            <p class="job-post__company">
-                ${jobItem.company}
-                <span class="tag tag--new">
-                    ${jobItem.new}
-                </span>
-                <span class="tag tag--featured">
-                    ${jobItem.featured}
-                </span>
-            </p>
-            <h3 class="job-post__title">
-                ${jobItem.position}
-            </h3>
-            <p class="job-post__description">
-                <span class="job-post__release-date">
-                    ${jobItem.postedAt}
-                </span>
-                <span class="job-post__type">
-                    ${postedAt.contract}
-                </span>
-                <span class="job-post__access">
-                    ${postedAt.location}
-                </span>
-            </p>
-        </div>
-        <div class="separator"></div>
-        <div class="job-post__tags">
-            <ul class="label__list">
-                <li class="label">
-                    Frontend
-                </li>
-                <li class="label">
-                    Senior
-                </li>
-                <li class="label">
-                    HTML
-                </li>
-                <li class="label">
-                    CSS
-                </li>
-                <li class="label">
-                    JavaScript
-                </li>
-            </ul>
-        </div>
+  return `
+  <section class="job-post job-post--featured">
+      <img src="${jobItem.logo}" alt="${jobItem.company} logo" class="job-post__logo">
+      <div class="job-post__info">
+          <p class="job-post__company">
+              ${jobItem.company}
+              <span class="tag tag--new">
+                  ${jobItem.new}
+              </span>
+              <span class="tag tag--featured">
+                  ${jobItem.featured}
+              </span>
+          </p>
+          <h3 class="job-post__title">
+              ${jobItem.position}
+          </h3>
+          <p class="job-post__description">
+              <span class="job-post__release-date">
+                  ${jobItem.postedAt}
+              </span>
+              <span class="job-post__type">
+                  ${jobItem.contract}
+              </span>
+              <span class="job-post__access">
+                  ${jobItem.location}
+              </span>
+          </p>
+      </div>
+      <div class="separator"></div>
     </section>
-    `
+  `
+}
+
+function renderJobListings() {
+    const renderSingleJob = jobsListings.map(renderJob).join('');
+    document.getElementById('main').insertAdjacentHTML('afterbegin', renderSingleJob)
+    console.log('renderJob: ', renderSingleJob)
+    // return jobsListings.map(renderJob).join('')
 }
 
 renderJobListings()
