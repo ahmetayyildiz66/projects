@@ -59,6 +59,12 @@ body {
   display: flex; }
   .label__list > *:not(:last-child) {
     margin-right: 1.6rem; }
+  @media (max-width: 23.4375em) {
+    .label__list {
+      flex-wrap: wrap;
+      margin: -3.3rem 0 0 0; }
+      .label__list > * {
+        margin-top: 2rem; } }
 
 .tag {
   border-radius: 100px;
@@ -79,6 +85,17 @@ body {
   padding: .8rem 1rem;
   font-weight: bold; }
 
+.separator {
+  display: none; }
+  @media (max-width: 23.4375em) {
+    .separator {
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+      height: 1px;
+      margin-top: -3.3rem;
+      background-color: var(--clr-gray-light-3); } }
+
 .job-post {
   align-items: center;
   gap: 2.4rem;
@@ -90,7 +107,8 @@ body {
     .job-post {
       position: relative;
       width: 32.7rem;
-      height: 25.7rem; } }
+      height: 25.7rem;
+      padding: 3.2rem 2.4rem; } }
   @media (max-width: 23.4375em) {
     .job-post__logo {
       position: absolute;

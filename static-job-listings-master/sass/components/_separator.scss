@@ -1,4 +1,5 @@
 .separator {
+    display: none;
     @include respond($bp-mobile) {
         width: 100%;
         display: block;
