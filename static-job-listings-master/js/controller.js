@@ -1,5 +1,3 @@
-console.log('controller')
-
 const jobsListings = [
     {
       "id": 1,
@@ -153,28 +151,14 @@ const jobsListings = [
     }
 ]
 
-function renderTags() {
-  jobsListings.map(item) => `
-    <div class="job-post__tags">
-			<ul class="label__list">
-				<li class="label">
-					Frontend
-				</li>
-				<li class="label">
-					Senior
-				</li>
-				<li class="label">
-					HTML
-				</li>
-				<li class="label">
-					CSS
-				</li>
-				<li class="label">
-					JavaScript
-				</li>
-			</ul>
-		</div>
-    `;
+function applyTags(job) {
+  const tags = [
+    job.role,
+    job.position,
+    ...(job.languages ? job.languages : []),
+    ...(job.tools ? job.tools : [])
+  ]
+  return tags
 }
 
 function renderJob(jobItem) {
@@ -207,15 +191,26 @@ function renderJob(jobItem) {
           </p>
       </div>
       <div class="separator"></div>
+      <div class="job-post__tags">
+        <ul class="label__list">
+          ${applyTags(jobItem).map(item => `<li class="label">${item}</li>`).join('')}
+        </ul>
+      </div>
     </section>
   `
 }
 
 function renderJobListings() {
-    const renderSingleJob = jobsListings.map(renderJob).join('');
-    document.getElementById('main').insertAdjacentHTML('afterbegin', renderSingleJob)
-    console.log('renderJob: ', renderSingleJob)
-    // return jobsListings.map(renderJob).join('')
+    const renderSingleJob = jobsListings.map(renderJob)
+    document.getElementById('main').insertAdjacentHTML('beforeend', renderSingleJob)
 }
+
+function init() {
+  document.addEventListener('click', function(e) {
+    console.log('e: ', e.target.innerText)
+  })
+}
+
+init()
 
 renderJobListings()

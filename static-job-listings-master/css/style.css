@@ -85,6 +85,10 @@ body {
   padding: .8rem 1rem;
   font-weight: bold; }
 
+.search {
+  width: 82%;
+  margin: 0 auto; }
+
 .separator {
   display: none; }
   @media (max-width: 23.4375em) {
