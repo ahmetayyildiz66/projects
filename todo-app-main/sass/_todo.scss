@@ -5,11 +5,19 @@
     }
 
     &__create {
-        background-color: #fff;
+        background-color: var(--clr-white);
         height: var(--size-todo-item);
         padding: 2rem 2.4rem;
         display: flex;
         align-items: center;
         border-radius: var(--size-border-radius);
+        margin-bottom: 2.4rem;
+    }
+
+    &__note {
+        margin: 5rem auto;
+        text-align: center;
+        font-size: 1.4rem;
+        color: var(--clr-light-gray);
     }
 }

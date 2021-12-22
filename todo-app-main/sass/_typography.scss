@@ -3,9 +3,8 @@ body {
     font-size: var(--size-default-font);
 }
 
-input {
+input, button {
     font-family: inherit;
-    letter-spacing: .25px;
 }
 
 .heading-primary {

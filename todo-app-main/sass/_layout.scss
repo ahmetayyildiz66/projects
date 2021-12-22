@@ -11,6 +11,7 @@
     grid-template-columns: [full-start] 1fr [center-start]
         repeat(12, [col-start] minmax(min-content, 6.5rem) [col-end]) [center-end] 1fr [full-end];
     column-gap: 2rem;
+    // background-color: var(--clr-very-light-gray);
 }
 
 .todo {

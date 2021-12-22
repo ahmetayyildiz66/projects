@@ -1,0 +1,35 @@
+.todo-list {
+    background-color: var(--clr-white);
+    border-radius: var(--size-border-radius);
+    box-shadow: var(--box-shadow);
+    list-style: none;
+
+    &--completed {
+        text-decoration: line-through;
+    }
+
+    &__item {
+        padding: 2rem 2.4rem;
+        display: flex;
+        align-items: center;
+
+        &:not(:first-child) {
+            padding-top: 0;
+        }
+    }
+
+    &__task {
+        margin-top: 3px;
+        color: var(--clr-light-gray-2);
+        letter-spacing: -.25px;
+    }
+
+    &__details {
+        color: var(--clr-dark-grayish-blue);
+        font-size: 1.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2.4rem 2rem;
+    }
+}

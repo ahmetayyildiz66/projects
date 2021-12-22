@@ -1,0 +1,21 @@
+.btn {
+    border: none;
+    background-color: transparent;
+    color: var(--clr-light-gray);
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &--active {
+        color: var(--clr-bright-blue);
+    }
+
+    &--inactive {
+        color: var(--clr-light-gray);
+    }
+}
+
+.btn + .btn {
+    margin-left: 1.8rem;
+}

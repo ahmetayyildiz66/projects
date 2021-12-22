@@ -1,5 +1,6 @@
 :root {
     // COLORS
+    --clr-white: #fff;
     --clr-blue-1: #5596FF;
     --clr-purple-1: #AC2DEB;
     --clr-bright-blue: hsl(220, 98%, 61%);
@@ -13,6 +14,7 @@
     --clr-dark-grayish-blue: hsl(236, 9%, 61%);
     --clr-very-dark-grayish-blue: hsl(235, 19%, 35%);
     --clr-light-gray: hsl(235, 9%, 61%);
+    --clr-light-gray-2: hsl(235, 19%, 35%);
 
     // Dark theme
     --very-dark-blue: hsl(235, 21%, 11%);
@@ -27,4 +29,7 @@
     --size-default-font: 1.8rem;
     --size-todo-item: 6.4rem;
     --size-border-radius: .5rem;
+
+    // EXTRA
+    --box-shadow: 0 5px 5px var(--clr-Very-light-grayish-blue);
 }
