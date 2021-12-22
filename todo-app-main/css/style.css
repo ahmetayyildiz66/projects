@@ -117,7 +117,8 @@ input, button {
   .btn:hover {
     cursor: pointer; }
   .btn--active {
-    color: var(--clr-bright-blue); }
+    color: var(--clr-bright-blue);
+    font-weight: 700; }
   .btn--inactive {
     color: var(--clr-light-gray); }
 
