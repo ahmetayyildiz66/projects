@@ -1,0 +1,11 @@
+.input-text {
+    border: none;
+    font-size: inherit;
+    color: var(--clr-light-gray);
+    background-color: transparent;
+    margin-top: 3px;
+
+    &:focus {
+        outline: none;
+    }
+}

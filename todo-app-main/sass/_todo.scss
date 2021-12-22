@@ -1,4 +1,15 @@
 .todo {
-    grid-column: col-start 4 / col-end 9;
+    &__header {
+        margin-bottom: 4rem;
+        height: 4.8rem;
+    }
 
+    &__create {
+        background-color: #fff;
+        height: var(--size-todo-item);
+        padding: 2rem 2.4rem;
+        display: flex;
+        align-items: center;
+        border-radius: var(--size-border-radius);
+    }
 }
