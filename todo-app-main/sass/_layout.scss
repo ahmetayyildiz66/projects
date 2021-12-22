@@ -1,0 +1,14 @@
+.header {
+    background-image: url(../images/bg-desktop-light.jpg), linear-gradient(225deg, var(--gradient-colors));
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 30rem 1fr;
+    grid-template-columns: [full-start] 1fr [center-start]
+        repeat(12, [col-start] minmax(min-content, 6.5rem) [col-end]) [center-end] 1fr [full-end];
+    column-gap: 2rem;
+}

@@ -1,0 +1,46 @@
+:root {
+  --clr-blue-1: #5596FF;
+  --clr-purple-1: #AC2DEB;
+  --clr-bright-blue: hsl(220, 98%, 61%);
+  --gradient-colors: hsl(192, 100%, 67%), hsl(280, 87%, 65%);
+  --clr-very-light-gray: hsl(0, 0%, 98%);
+  --clr-Very-light-grayish-blue: hsl(236, 33%, 92%);
+  --clr-light-grayish-blue: hsl(233, 11%, 84%);
+  --clr-dark-grayish-blue: hsl(236, 9%, 61%);
+  --clr-very-dark-grayish-blue: hsl(235, 19%, 35%);
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --light-grayish-blue: hsl(234, 39%, 85%);
+  --light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+  --very-dark-grayish-blue: hsl(233, 14%, 35%);
+  --very-dark-grayish-blue: hsl(237, 14%, 26%);
+  --font-default-size: 1.8rem; }
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: var(--font-default-size); }
+
+.header {
+  background-image: url(../images/bg-desktop-light.jpg), linear-gradient(225deg, var(--gradient-colors));
+  min-height: 30rem;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.container {
+  display: grid;
+  grid-template-rows: 30rem 1fr;
+  grid-template-columns: [full-start] 1fr [center-start] repeat(12, [col-start] minmax(min-content, 6.5rem) [col-end]) [center-end] 1fr [full-end];
+  column-gap: 2rem; }
+
+.todo {
+  grid-column: col-start 4 / col-end 9; }

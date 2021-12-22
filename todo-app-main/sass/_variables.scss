@@ -1,0 +1,26 @@
+:root {
+    // COLORS
+    --clr-blue-1: #5596FF;
+    --clr-purple-1: #AC2DEB;
+    --clr-bright-blue: hsl(220, 98%, 61%);
+    --gradient-colors: hsl(192, 100%, 67%), hsl(280, 87%, 65%);
+
+    // Light theme
+    --clr-very-light-gray: hsl(0, 0%, 98%);
+    --clr-Very-light-grayish-blue: hsl(236, 33%, 92%);
+    --clr-light-grayish-blue: hsl(233, 11%, 84%);
+    --clr-dark-grayish-blue: hsl(236, 9%, 61%);
+    --clr-very-dark-grayish-blue: hsl(235, 19%, 35%);
+
+    // Dark theme
+    --very-dark-blue: hsl(235, 21%, 11%);
+    --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+    --light-grayish-blue: hsl(234, 39%, 85%);
+    --light-grayish-blue-hover: hsl(236, 33%, 92%);
+    --dark-grayish-blue: hsl(234, 11%, 52%);
+    --very-dark-grayish-blue: hsl(233, 14%, 35%);
+    --very-dark-grayish-blue: hsl(237, 14%, 26%);
+
+    // SIZES
+    --font-default-size: 1.8rem;
+}
