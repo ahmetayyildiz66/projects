@@ -1,9 +1,13 @@
 .input-text {
     border: none;
     font-size: inherit;
-    color: var(--clr-light-gray);
+    color: var(--clr-input-text);
     background-color: transparent;
     margin-top: 3px;
+
+    &::placeholder {
+        color: var(--clr-light-gray)
+    }
 
     &:focus {
         outline: none;

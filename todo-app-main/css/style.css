@@ -2,7 +2,8 @@
   --clr-blue-1: #5596FF;
   --clr-purple-1: #AC2DEB;
   --clr-bright-blue: hsl(220, 98%, 61%);
-  --gradient-colors: hsl(192, 100%, 67%), hsl(280, 87%, 65%);
+  --gradient-colors: hsl(192, 100%, 67%), rgb(192, 88, 243);
+  --clr-input-text: hsl(235, 14%, 26%);
   --clr-very-light-gray: hsl(0, 0%, 98%);
   --clr-Very-light-grayish-blue: hsl(236, 33%, 92%);
   --clr-light-grayish-blue: hsl(233, 11%, 84%);
@@ -75,16 +76,51 @@ input {
   align-items: center;
   border-radius: var(--size-border-radius); }
 
-.radio-btn {
+.check-btn {
+  display: none; }
+  .check-btn:checked + .check__label .check__span::after {
+    background-image: url(../images/icon-check.svg);
+    background-repeat: no-repeat;
+    opacity: 1; }
+  .check-btn:checked + .check__label {
+    background-image: linear-gradient(225deg, var(--gradient-colors));
+    background-repeat: no-repeat; }
+
+.check__label {
+  position: relative;
   height: 2.4rem;
   width: 2.4rem;
-  cursor: pointer; }
+  border-radius: 50%; }
+
+.check__span {
+  position: absolute;
+  cursor: pointer;
+  left: 0;
+  border-radius: 50%;
+  display: inline-block;
+  height: 2.4rem;
+  width: 2.4rem;
+  border: 2px solid var(--clr-Very-light-grayish-blue); }
+  .check__span::after {
+    content: '';
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    opacity: 0;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .2s; }
 
 .input-text {
   border: none;
   font-size: inherit;
-  color: var(--clr-light-gray);
+  color: var(--clr-input-text);
   background-color: transparent;
   margin-top: 3px; }
+  .input-text::placeholder {
+    color: var(--clr-light-gray); }
   .input-text:focus {
     outline: none; }
