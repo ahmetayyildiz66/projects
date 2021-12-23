@@ -36,3 +36,9 @@ export const state = {
 export const addNewTodo = function(newTask) {
     state.todos.push(newTask)
 }
+
+export const updateStatus = function(id) {
+    const todo = state.todos.find(todo => todo.id === id * 1 )
+    const { status } = todo
+    todo.status = status === 'incomplete' ? 'completed' : status
+}
