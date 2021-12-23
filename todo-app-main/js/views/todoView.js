@@ -26,7 +26,7 @@ class TodoView {
                     <label for="check-${item.id}" class="check__label u-mr-medium">
                     <span class="check__span"></span>
                     </label>
-                    <p class="todo-list__task">${item.task}</p>
+                    <p class="todo-list__task ${item.status === 'completed' ? 'todo-list--completed': ''}">${item.task}</p>
                 </li>
                 <div class="separator">&nbsp;</div>
             `;

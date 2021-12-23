@@ -66,6 +66,11 @@ input, button {
   grid-column: col-start 4 / col-end 9;
   margin-top: -23rem; }
 
+.button-group {
+  display: flex;
+  margin-left: 6rem;
+  flex: 1; }
+
 .todo__header {
   margin-bottom: 4rem;
   height: 4.8rem; }
@@ -112,7 +117,6 @@ input, button {
   font-size: 1.4rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 1.6rem 2.4rem 2rem; }
 
 .btn {
@@ -126,6 +130,8 @@ input, button {
     font-weight: 700; }
   .btn--inactive {
     color: var(--clr-light-gray); }
+  .btn--clear {
+    margin-left: auto !important; }
 
 .btn + .btn {
   margin-left: 1.8rem; }

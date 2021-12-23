@@ -2,6 +2,7 @@ import * as model from './model.js'
 import addTodoView from './views/addTodoView.js'
 import todoView from './views/todoView.js'
 import filterView from './views/filterView.js'
+import leftItemsView from './views/leftItemsView.js'
 
 const handleNewTodo = function() {
     const query = addTodoView.getQuery()
@@ -19,7 +20,7 @@ const handleTodoStatus = function(event) {
         const paragraphSibling = event.target.parentNode.querySelector('.todo-list__task');
         paragraphSibling.classList.toggle('todo-list--completed')
     }
-    console.log('todos: ', model.state.todos)
+    calculateIncompleteTodos()
 }
 
 const handleTodoFilter = function(event) {
@@ -29,7 +30,7 @@ const handleTodoFilter = function(event) {
     })
     event.target.classList.add('btn--active')
     const btnId = event.target.id
-    console.log('btnId: ', btnId)
+
     let status = ''
     if (btnId === 'btn-active') {
         status = 'incomplete'
@@ -37,6 +38,8 @@ const handleTodoFilter = function(event) {
         status = 'completed'
     } else if (btnId === 'btn-all') {
         status = 'all'
+    } else if (btnId === 'btn-clear') {
+        status = 'clear'
     }
     if (status) {
         const todos = model.filterTodos(status)
@@ -44,11 +47,18 @@ const handleTodoFilter = function(event) {
     }
 }
 
+const calculateIncompleteTodos = function() {
+    const length =  model.state.todos.filter(todo => todo.status === 'incomplete').length
+    leftItemsView.render(length)
+}
+
 const init = function() {
     addTodoView.addHandlerNewTodo(handleNewTodo)
     todoView.addHandlerToggleTodo(handleTodoStatus)
     filterView.filterTodosHandler(handleTodoFilter)
     todoView.render(model.state.todos)
+
+    calculateIncompleteTodos()
 }
 
 init()

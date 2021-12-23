@@ -18,3 +18,9 @@
     grid-column: col-start 4 / col-end 9;
     margin-top: -23rem;
 }
+
+.button-group {
+    display: flex;
+    margin-left: 6rem;
+    flex: 1;
+}

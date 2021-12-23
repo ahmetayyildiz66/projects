@@ -49,5 +49,6 @@ export const updateStatus = function(id) {
 
 export const filterTodos = function(status) {
     if (status === 'all') return state.todos
+    if (status === 'clear') return state.todos = state.todos.filter(todo => todo.status !== 'completed')
     return state.todos.filter(todo => todo.status === status)
 }

@@ -15,6 +15,10 @@
     &--inactive {
         color: var(--clr-light-gray);
     }
+
+    &--clear {
+        margin-left: auto !important;
+    }
 }
 
 .btn + .btn {
