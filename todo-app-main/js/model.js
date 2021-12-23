@@ -40,5 +40,14 @@ export const addNewTodo = function(newTask) {
 export const updateStatus = function(id) {
     const todo = state.todos.find(todo => todo.id === id * 1 )
     const { status } = todo
-    todo.status = status === 'incomplete' ? 'completed' : status
+    if (status === 'incomplete') {
+        todo.status = 'completed'
+    } else {
+        todo.status = 'incomplete'
+    }
+}
+
+export const filterTodos = function(status) {
+    if (status === 'all') return state.todos
+    return state.todos.filter(todo => todo.status === status)
 }

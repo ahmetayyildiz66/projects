@@ -15,9 +15,17 @@
     }
 
     &__note {
-        margin: 5rem auto;
+        margin: 2rem auto;
         text-align: center;
         font-size: 1.4rem;
         color: var(--clr-light-gray);
     }
+}
+
+.wrapper {
+    background-color: var(--clr-white);
+    border-radius: var(--size-border-radius);
+    box-shadow: var(--box-shadow);
+    list-style: none;
+    padding-bottom: 1rem;
 }

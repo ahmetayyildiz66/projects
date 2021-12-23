@@ -22,7 +22,7 @@ class TodoView {
         return this._data.map((item) => {
             return `
                 <li class="todo-list__item u-mr-medium">
-                    <input type="checkbox" id="check-${item.id}" class="check-btn">
+                    <input type="checkbox" ${item.status === 'completed' ? 'checked' : ''} id="check-${item.id}" class="check-btn">
                     <label for="check-${item.id}" class="check__label u-mr-medium">
                     <span class="check__span"></span>
                     </label>
