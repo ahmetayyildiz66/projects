@@ -2,15 +2,24 @@ class TodoView {
     _data;
     _todoList = document.querySelector('.todo-list')
 
+    _clear() {
+        this._todoList.innerHTML = ''
+    }
+
     render(data) {
         this._data = data;
         const markup = this._generateMarkup()
         this._todoList.insertAdjacentHTML('afterbegin', markup)
     }
 
+    addHandlerToggleTodo(handler) {
+        this._todoList.addEventListener('click', e => {
+            handler(e)
+        })
+    }
+
     _generateMarkup() {
         return this._data.map((item) => {
-            console.log('item: ', item)
             return `
                 <li class="todo-list__item u-mr-medium">
                     <input type="checkbox" id="check-${item.id}" class="check-btn">

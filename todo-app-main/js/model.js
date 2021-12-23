@@ -32,3 +32,7 @@ export const state = {
         },
     ]
 }
+
+export const addNewTodo = function(newTask) {
+    state.todos.push(newTask)
+}
