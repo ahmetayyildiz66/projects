@@ -19,6 +19,10 @@ const handleTodoStatus = function(event) {
         model.updateStatus(id)
         const paragraphSibling = event.target.parentNode.querySelector('.todo-list__task');
         paragraphSibling.classList.toggle('todo-list--completed')
+    } else if (event.target.className === 'todo-list__remove' || event.target.className?.baseVal === 'cross') {
+        const id = event.target.id.split('-')[1] * 1
+        model.removeTodo(id)
+        todoView.render(model.state.todos)
     }
     calculateIncompleteTodos()
 }

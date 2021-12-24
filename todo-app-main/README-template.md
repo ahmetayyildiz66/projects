@@ -28,7 +28,7 @@ Users should be able to:
 - [] See hover states for all interactive elements on the page
 - [X] Add new todos to the list
 - [X] Mark todos as complete
-- [] Delete todos from the list
+- [X] Delete todos from the list
 - [X] Filter by all/active/complete todos
 - [X] Clear all completed todos
 - [] Toggle light and dark mode

@@ -52,3 +52,7 @@ export const filterTodos = function(status) {
     if (status === 'clear') return state.todos = state.todos.filter(todo => todo.status !== 'completed')
     return state.todos.filter(todo => todo.status === status)
 }
+
+export const removeTodo = function(id) {
+    state.todos = state.todos.filter(todo => todo.id !== id)
+}

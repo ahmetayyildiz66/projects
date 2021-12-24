@@ -33,6 +33,9 @@ html {
   box-sizing: border-box;
   font-size: 62.5%; }
 
+span {
+  display: inline-flex; }
+
 body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: var(--size-default-font); }
@@ -49,6 +52,9 @@ input, button {
 
 .u-mr-medium {
   margin-right: 2.4rem !important; }
+
+.u-ml-auto {
+  margin-left: auto !important; }
 
 .header {
   background-image: url(../images/bg-desktop-light.jpg), linear-gradient(225deg, var(--gradient-colors));
@@ -118,6 +124,9 @@ input, button {
   display: flex;
   align-items: center;
   padding: 1.6rem 2.4rem 2rem; }
+
+.todo-list__remove {
+  cursor: pointer; }
 
 .btn {
   border: none;
