@@ -8,6 +8,7 @@
     --clr-input-text: hsl(235, 14%, 26%);
 
     // Light theme
+    --clr-bg: #fff;
     --clr-very-light-gray: hsl(0, 0%, 98%);
     --clr-Very-light-grayish-blue: hsl(236, 33%, 92%);
     --clr-light-grayish-blue: hsl(233, 11%, 84%);
@@ -15,15 +16,11 @@
     --clr-very-dark-grayish-blue: hsl(235, 19%, 35%);
     --clr-light-gray: hsl(235, 9%, 61%);
     --clr-light-gray-2: hsl(235, 19%, 35%);
+    --clr-task-label: hsl(235, 19%, 35%);
+    --clr-task-checkbox: hsl(236, 33%, 92%);
+    --clr-bg-todolist: #fff;
+    --clr-border-todolist: hsl(236, 33%, 92%);
 
-    // Dark theme
-    --very-dark-blue: hsl(235, 21%, 11%);
-    --very-dark-desaturated-blue: hsl(235, 24%, 19%);
-    --light-grayish-blue: hsl(234, 39%, 85%);
-    --light-grayish-blue-hover: hsl(236, 33%, 92%);
-    --dark-grayish-blue: hsl(234, 11%, 52%);
-    --very-dark-grayish-blue: hsl(233, 14%, 35%);
-    --very-dark-grayish-blue: hsl(237, 14%, 26%);
 
     // SIZES
     --size-default-font: 1.8rem;
@@ -31,5 +28,22 @@
     --size-border-radius: .5rem;
 
     // EXTRA
-    --box-shadow: 0 5px 5px var(--clr-Very-light-grayish-blue);
+    --box-shadow: 0 5px 5px var(--clr-border-todolist);
+}
+
+[data-theme="dark"] {
+    --clr-very-dark-blue: hsl(235, 21%, 11%);
+    --clr-bg: hsl(235, 21%, 11%);
+    --clr-light-gray-2: hsl(236, 32%, 92%);
+    --clr-task-label: hsl(235, 39%, 85%);
+    --clr-task-checkbox: hsl(0, 0%, 59%);
+    --clr-very-dark-desaturated-blue: hsl(235, 24%, 19%);
+    --clr-light-grayish-blue: hsl(234, 39%, 85%);
+    --clr-light-grayish-blue-hover: hsl(236, 33%, 92%);
+    --clr-dark-grayish-blue: hsl(234, 11%, 52%);
+    --clr-very-dark-grayish-blue: hsl(233, 14%, 35%);
+    --clr-bg-todolist: hsl(235, 14%, 26%);
+
+    // EXTRA
+    --box-shadow: 0 5px 5px var(--clr-bg-todolist);
 }
