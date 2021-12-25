@@ -3,13 +3,18 @@
     background-color: transparent;
     color: var(--clr-light-gray);
 
-    &:hover {
+    &:not(.btn--active):hover {
         cursor: pointer;
+        color: var(--clr-light-gray-2);
+        transition: .5s;
     }
 
     &--active {
         color: var(--clr-bright-blue);
         font-weight: 700;
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &--inactive {

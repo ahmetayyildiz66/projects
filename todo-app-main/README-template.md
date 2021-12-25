@@ -25,7 +25,7 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 Users should be able to:
 
 - [] View the optimal layout for the app depending on their device's screen size
-- [] See hover states for all interactive elements on the page
+- [X] See hover states for all interactive elements on the page
 - [X] Add new todos to the list
 - [X] Mark todos as complete
 - [X] Delete todos from the list
