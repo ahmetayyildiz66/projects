@@ -103,6 +103,12 @@ input, button {
   list-style: none;
   padding-bottom: 1rem; }
 
+.draggable {
+  cursor: move; }
+
+.dragging {
+  opacity: .5; }
+
 .todo-list--completed {
   text-decoration: line-through; }
 

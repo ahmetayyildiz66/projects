@@ -19,10 +19,33 @@ class TodoView {
         })
     }
 
+    dragStartHandler(handler) {
+        this._todoList.addEventListener('dragstart', (e) => {
+            handler(e)
+        })
+    }
+
+    dragEndHandler(handler) {
+        this._todoList.addEventListener('dragend', (e) => {
+            handler(e)
+        })
+    }
+
+    dragOverHandler(handler) {
+        this._todoList.addEventListener('dragenter', (e) => {
+            const draggables = document.querySelectorAll('.draggable:not(.dragging)')
+            const dragging = document.querySelector('.dragging')
+            const draggablesArr = [...draggables]
+            e.target.style.cursor = 'move'
+            e.preventDefault() // by default dropping inside of an element is disabled look at the cursor closely
+            handler(e, this._todoList, draggablesArr, dragging)
+        })
+    }
+
     _generateMarkup() {
         return this._data.map((item) => {
             return `
-                <li class="todo-list__item">
+                <li class="todo-list__item draggable" draggable="true">
                     <input type="checkbox" ${item.status === 'completed' ? 'checked' : ''} id="check-${item.id}" class="check-btn">
                     <label for="check-${item.id}" class="check__label u-mr-medium">
                     <span class="check__span"></span>

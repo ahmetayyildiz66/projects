@@ -29,3 +29,11 @@
     list-style: none;
     padding-bottom: 1rem;
 }
+
+.draggable {
+    cursor: move;
+}
+
+.dragging {
+    opacity: .5;
+}

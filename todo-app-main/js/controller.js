@@ -7,9 +7,8 @@ import leftItemsView from './views/leftItemsView.js'
 const handleNewTodo = function() {
     const query = addTodoView.getQuery()
     if (query) {
-        const newTask = [{ id: model.state.todos.length + 1, task: query, status: 'incomplete' }]
         model.addNewTodo({ id: model.state.todos.length + 1, task: query, status: 'incomplete' })
-        todoView.render(newTask)
+        todoView.render([...model.state.todos])
     }
 }
 
@@ -56,11 +55,43 @@ const calculateIncompleteTodos = function() {
     leftItemsView.render(length)
 }
 
+const handleDragStart = (e) => {
+    e.target.classList.add('dragging')
+}
+
+const handleDragEnd = (e) => {
+    e.target.classList.remove('dragging')
+}
+
+function getDragAfterElement(y, draggables) {
+    return draggables.reduce((closest, child) => {
+        const box = child.getBoundingClientRect()
+        const offset = y - box.top - box.height / 2
+        if (offset < 0 && offset > closest.offset) {
+            return { offset: offset, element: child}
+        } else {
+            return closest
+        }
+    }, { offset: Number.NEGATIVE_INFINITY }).element
+}
+
+const handleDragOver = (e, container, draggables, dragging) => {
+    const afterElement = getDragAfterElement(e.clientY, draggables)
+    if (!afterElement) {
+        container.appendChild(dragging)
+    } else {
+        container.insertBefore(dragging, afterElement)
+    }
+}
+
 const init = function() {
     addTodoView.addHandlerNewTodo(handleNewTodo)
     todoView.addHandlerToggleTodo(handleTodoStatus)
     filterView.filterTodosHandler(handleTodoFilter)
     todoView.render(model.state.todos)
+    todoView.dragStartHandler(handleDragStart)
+    todoView.dragEndHandler(handleDragEnd)
+    todoView.dragOverHandler(handleDragOver)
 
     calculateIncompleteTodos()
 }

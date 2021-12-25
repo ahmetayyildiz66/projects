@@ -32,7 +32,7 @@ Users should be able to:
 - [X] Filter by all/active/complete todos
 - [X] Clear all completed todos
 - [] Toggle light and dark mode
-- [] **Bonus**: Drag and drop to reorder items on the list
+- [X] **Bonus**: Drag and drop to reorder items on the list
 
 ### Screenshot
 
