@@ -28,7 +28,8 @@
     display: inline-block;
     height: 2.4rem;
     width: 2.4rem;
-    border: 2px solid var(--clr-Very-light-grayish-blue);
+    border: 2px solid var(--clr-task-checkbox);
+    border-color: hsla(192, 100%, 67%, 1) hsla(280, 87%, 65%, 1) hsla(280, 87%, 65%, 1) hsla(192, 100%, 67%, 1);
 
     &::after {
         content: '';

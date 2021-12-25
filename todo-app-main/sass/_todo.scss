@@ -2,10 +2,13 @@
     &__header {
         margin-bottom: 4rem;
         height: 4.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     &__create {
-        background-color: var(--clr-white);
+        background-color: var(--clr-bg-todolist);
         height: var(--size-todo-item);
         padding: 2rem 2.4rem;
         display: flex;
@@ -21,9 +24,12 @@
         color: var(--clr-light-gray);
     }
 }
+body {
+    background-color: var(--clr-bg);
+}
 
 .wrapper {
-    background-color: var(--clr-white);
+    background-color: var(--clr-bg-todolist);
     border-radius: var(--size-border-radius);
     box-shadow: var(--box-shadow);
     list-style: none;
@@ -36,4 +42,8 @@
 
 .dragging {
     opacity: .5;
+}
+
+.theme-switcher {
+    cursor: pointer;
 }

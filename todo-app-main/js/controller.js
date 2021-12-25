@@ -3,6 +3,7 @@ import addTodoView from './views/addTodoView.js'
 import todoView from './views/todoView.js'
 import filterView from './views/filterView.js'
 import leftItemsView from './views/leftItemsView.js'
+import themeView from './views/themeView.js'
 
 const handleNewTodo = function() {
     const query = addTodoView.getQuery()
@@ -84,7 +85,39 @@ const handleDragOver = (e, container, draggables, dragging) => {
     }
 }
 
+const handleSwitchTheme = (e) => {
+    [...e.target.children].forEach(child => {
+        child.classList.toggle('u-hidden')
+        const currentMode = [...child.classList].find(item => item === 'u-hidden')
+        if (!currentMode) {
+            if (child.classList.contains('dark')) {
+                setThemeAttribute('dark')
+            } else {
+                setThemeAttribute('light')
+            }
+        }
+    })
+}
+
+function setThemeAttribute(mode) {
+    document.documentElement.setAttribute('data-theme', mode)
+    localStorage.setItem('theme', mode)
+}
+
+const iconSetTheme = () => {
+    const theme = localStorage.getItem('theme')
+    document.documentElement.setAttribute('data-theme', theme)
+    const icons = themeView.getIcons()
+    Array.from(icons).forEach(icon => {
+        if(!icon.classList.contains(theme)) {
+            icon.classList.add('u-hidden')
+        }
+    })
+}
+
 const init = function() {
+    iconSetTheme()
+
     addTodoView.addHandlerNewTodo(handleNewTodo)
     todoView.addHandlerToggleTodo(handleTodoStatus)
     filterView.filterTodosHandler(handleTodoFilter)
@@ -92,8 +125,8 @@ const init = function() {
     todoView.dragStartHandler(handleDragStart)
     todoView.dragEndHandler(handleDragEnd)
     todoView.dragOverHandler(handleDragOver)
+    themeView.switchThemeHandler(handleSwitchTheme)
 
-    calculateIncompleteTodos()
 }
 
 init()
