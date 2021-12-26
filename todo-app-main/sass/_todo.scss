@@ -1,0 +1,49 @@
+.todo {
+    &__header {
+        margin-bottom: 4rem;
+        height: 4.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__create {
+        background-color: var(--clr-bg-todolist);
+        height: var(--size-todo-item);
+        padding: 2rem 2.4rem;
+        display: flex;
+        align-items: center;
+        border-radius: var(--size-border-radius);
+        margin-bottom: 2.4rem;
+    }
+
+    &__note {
+        margin: 2rem auto;
+        text-align: center;
+        font-size: 1.4rem;
+        color: var(--clr-light-gray);
+    }
+}
+body {
+    background-color: var(--clr-bg);
+}
+
+.wrapper {
+    background-color: var(--clr-bg-todolist);
+    border-radius: var(--size-border-radius);
+    box-shadow: var(--box-shadow);
+    list-style: none;
+    padding-bottom: 1rem;
+}
+
+.draggable {
+    cursor: move;
+}
+
+.dragging {
+    opacity: .5;
+}
+
+.theme-switcher {
+    cursor: pointer;
+}

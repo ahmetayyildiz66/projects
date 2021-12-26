@@ -1,0 +1,21 @@
+.u-mr-medium {
+    margin-right: 2.4rem !important;
+}
+
+@include respond($bp-mobile) {
+    .u-mr-medium {
+        margin-right: 1.2rem !important;
+    }
+}
+
+.u-ml-auto {
+    margin-left: auto !important;
+}
+
+.u-hidden {
+    display: none !important;
+}
+
+.u-no-pointer-event {
+    pointer-events: none;
+}
