@@ -1,6 +1,10 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: var(--size-default-font);
+
+    @include respond($bp-mobile) {
+        font-size: var(--size-mobile-font);
+    }
 }
 
 input, button {

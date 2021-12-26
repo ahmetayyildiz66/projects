@@ -9,6 +9,11 @@ html {
     font-size: 62.5%; // 1 rem = 10px
 }
 
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
 span {
     display: inline-flex;
 }
