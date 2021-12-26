@@ -16,6 +16,7 @@
         grid-template-columns: [full-start] 2.4rem [center-start]
             repeat(4, [col-start] minmax(min-content, 6rem) [col-end]) [center-end] 2.4rem [full-end];
         column-gap: 1rem;
+        margin-right: 2.4rem;
     }
     // background-color: var(--clr-very-light-gray);
 }
@@ -35,6 +36,8 @@
     flex: 1;
 
     @include respond($bp-mobile) {
-        display: none;
+        & > .btn:not(:last-child) {
+            display: none;
+        }
     }
 }
