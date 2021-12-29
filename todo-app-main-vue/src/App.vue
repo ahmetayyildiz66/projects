@@ -28,5 +28,12 @@ export default {
     [center-start] repeat(12, [col-start]6.5rem [col-end])
     [center-end] 1fr [full-end];
   gap: var(--gutter);
+
+  @include respond($bp-mobile) {
+    grid-template-columns:
+      [full-start] 1fr
+      [center-start] repeat(4, [col-start] 6.5rem [col-end])
+      [center-end] 1fr [full-end];
+  }
 }
 </style>

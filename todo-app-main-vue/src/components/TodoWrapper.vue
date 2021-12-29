@@ -6,19 +6,21 @@
         <IconMoon />
       </IconBase>
     </div>
-    <input type="text" />
+    <InputBase />
   </div>
 </template>
 
 <script>
 import IconBase from '@/components/IconBase.vue';
 import IconMoon from '@/components/icons/IconMoon.vue';
+import InputBase from '@/components/InputBase.vue';
 
 export default {
   name: 'TodoWrapper',
   components: {
     IconBase,
     IconMoon,
+    InputBase,
   },
 };
 </script>
@@ -27,6 +29,10 @@ export default {
 .wrapper {
   margin-top: -23rem;
   grid-column: col-start 4 / span 6;
+
+  @include respond($bp-mobile) {
+    grid-column: center-start / center-end;
+  }
 }
 
 .todo {

@@ -18,5 +18,10 @@
     --gutter: 3rem;
     --container-max-width: 114rem;
     --bg-image-height-desktop: 30rem;
+}
 
+@include respond($bp-mobile) {
+    :root {
+        --gutter: 2rem;
+    }
 }
