@@ -2,6 +2,9 @@
     // Colors
     --clr-white: hsl(0, 0%, 100%);
     --clr-todo-text: hsl(235, 14%, 26%);
+    --clr-todo-background: hsl(0, 0%, 100%);
+    --clr-gray-1: #eeeff4;
+    --clr-border-todo-list: hsl(236, 33%, 92%);
 
     /* Styles that should be separate variables
         . Linear-gradient
@@ -14,6 +17,10 @@
 
     // Linear-gradients
     --l-grad: hsl(217, 100%, 67%), hsl(280, 83%, 55%);
+    --l-grad-checkbox: hsl(192, 100%, 67%), hsl(280, 87%, 65%);
+
+    // Shadow
+    --box-shadow: 0 .5rem .5rem var(--clr-border-todo-list);
 
     // Sizes
     --gutter: 3rem;
@@ -21,7 +28,10 @@
     --bg-image-height-desktop: 30rem;
     --border-radius: .5rem;
     --u-mr: 2.4rem;
+    --u-mb-medium: 2.4rem;
     --todo-height: 6.4rem;
+    --font-size: 1.8rem;
+    --padding-todo: 2rem 2.4rem;
 }
 
 @include respond($bp-mobile) {
@@ -29,5 +39,8 @@
         --gutter: 2rem;
         --u-mr: 1.2rem;
         --todo-height: 4.8rem;
+        --font-size: 1.2rem;
+        --u-mb-medium: 1.6rem;
+        --padding-todo: 1.4rem 2rem;
     }
 }

@@ -5,3 +5,7 @@
 .u-mb {
     margin-bottom: 4rem !important;
 }
+
+.u-mb-medium {
+    margin-bottom: var(--u-mb-medium) !important;
+}

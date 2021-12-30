@@ -1,5 +1,5 @@
 <template>
-  <path fill="none" stroke="red" stroke-width="2" d="M1 4.304L3.696 7l6-6" />
+  <path fill="none" :stroke="strokeColor" stroke-width="2" d="M1 4.304L3.696 7l6-6" />
 </template>
 <script>
 export default {

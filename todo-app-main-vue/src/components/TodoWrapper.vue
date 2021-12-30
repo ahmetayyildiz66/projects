@@ -6,10 +6,11 @@
         <IconMoon />
       </IconBase>
     </div>
-    <div class="todo__create">
+    <div class="todo__create u-mb-medium">
       <CheckboxBase class="u-mr" />
       <InputBase v-model="text" />
     </div>
+    <TodoList />
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import IconBase from '@/components/IconBase.vue';
 import IconMoon from '@/components/icons/IconMoon.vue';
 import InputBase from '@/components/InputBase.vue';
 import CheckboxBase from '@/components/CheckboxBase.vue';
+import TodoList from '@/components/TodoList.vue';
 
 export default {
   name: 'TodoWrapper',
@@ -27,9 +29,10 @@ export default {
     IconMoon,
     InputBase,
     CheckboxBase,
+    TodoList,
   },
   setup() {
-    const text = ref('Just a test');
+    const text = ref('');
 
     return {
       text,
@@ -52,10 +55,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: var(--clr-white);
 
   &__create {
     background-color: var(--clr-white);
-    padding: 1.5rem;
+    padding: var(--padding-todo);
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;

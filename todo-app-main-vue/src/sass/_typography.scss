@@ -2,9 +2,9 @@
 
 body {
     font-family: 'Josefin Sans', sans-serif;
-    color: var(--clr-white);
+    color: var(--clr-todo-text);
     letter-spacing: -.25px;
-    font-size: 1.8rem;
+    font-size: var(--font-size);
 }
 
 .heading-secondary {

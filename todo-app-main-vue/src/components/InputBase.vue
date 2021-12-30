@@ -1,5 +1,11 @@
 <template>
-  <input class="input-base" type="text" :value="modelValue" @input="emitValue" />
+  <input
+    class="input-base"
+    type="text"
+    placeholder="Create a new todo..."
+    :value="modelValue"
+    @input="emitValue"
+  />
 </template>
 
 <script>
@@ -23,7 +29,7 @@ export default {
 <style lang="scss" scoped>
 .input-base {
   border: none;
-  font-size: 1.8rem;
+  font-size: var(--font-size);
   color: var(--clr-todo-text);
   width: 100%;
   height: 4rem;

@@ -1,16 +1,21 @@
 <template>
-  <label for="checkbox" @click="createNewTask" class="checkbox-label">
+  <div
+    for="checkbox"
+    @click="createNewTask"
+    :class="{ 'checkbox-label--active': toggle }"
+    class="checkbox-label"
+  >
     <IconBase
       v-if="toggle"
       class="icon-wrapper"
       icon-name="check"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       icon-color="#000"
     >
-      <IconCheck class="icon-check" />
+      <IconCheck class="icon-check" stroke-color="#fff" />
     </IconBase>
-  </label>
+  </div>
 </template>
 
 <script>
@@ -24,11 +29,13 @@ export default {
     IconBase,
     IconCheck,
   },
-  setup() {
+  emits: ['line-through'],
+  setup(_, { emit }) {
     const toggle = ref(false);
 
     const createNewTask = () => {
       toggle.value = !toggle.value;
+      emit('line-through', toggle.value);
     };
 
     return {
@@ -47,11 +54,16 @@ export default {
   border-radius: 50%;
   border: 1px solid #e3e4f1;
   cursor: pointer;
+  margin-right: var(--u-mr);
+
+  &--active {
+    background-image: linear-gradient(var(--l-grad-checkbox));
+  }
 }
 
 .icon-wrapper {
   position: absolute;
-  top: 29%;
+  top: 33%;
   left: 26%;
   pointer-events: none;
 }
