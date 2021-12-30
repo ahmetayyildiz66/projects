@@ -1,6 +1,7 @@
 :root {
     // Colors
     --clr-white: hsl(0, 0%, 100%);
+    --clr-todo-text: hsl(235, 14%, 26%);
 
     /* Styles that should be separate variables
         . Linear-gradient
@@ -18,10 +19,15 @@
     --gutter: 3rem;
     --container-max-width: 114rem;
     --bg-image-height-desktop: 30rem;
+    --border-radius: .5rem;
+    --u-mr: 2.4rem;
+    --todo-height: 6.4rem;
 }
 
 @include respond($bp-mobile) {
     :root {
         --gutter: 2rem;
+        --u-mr: 1.2rem;
+        --todo-height: 4.8rem;
     }
 }

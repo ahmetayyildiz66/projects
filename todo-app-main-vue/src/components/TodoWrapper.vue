@@ -1,19 +1,24 @@
 <template>
   <div class="wrapper">
-    <div class="todo">
+    <div class="todo u-mb">
       <h2 class="heading-secondary">Todo</h2>
       <IconBase icon-name="moon" width="26" height="26">
         <IconMoon />
       </IconBase>
     </div>
-    <InputBase />
+    <div class="todo__create">
+      <CheckboxBase class="u-mr" />
+      <InputBase v-model="text" />
+    </div>
   </div>
 </template>
 
 <script>
+import { ref } from 'vue';
 import IconBase from '@/components/IconBase.vue';
 import IconMoon from '@/components/icons/IconMoon.vue';
 import InputBase from '@/components/InputBase.vue';
+import CheckboxBase from '@/components/CheckboxBase.vue';
 
 export default {
   name: 'TodoWrapper',
@@ -21,6 +26,14 @@ export default {
     IconBase,
     IconMoon,
     InputBase,
+    CheckboxBase,
+  },
+  setup() {
+    const text = ref('Just a test');
+
+    return {
+      text,
+    };
   },
 };
 </script>
@@ -39,5 +52,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  &__create {
+    background-color: var(--clr-white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    height: var(--todo-height);
+  }
 }
 </style>

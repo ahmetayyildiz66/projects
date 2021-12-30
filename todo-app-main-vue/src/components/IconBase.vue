@@ -11,7 +11,6 @@
     <g :fill="iconColor">
       <slot />
     </g>
-    <!-- <path fill="none" stroke="#FFF" stroke-width="2" d="M1 4.304L3.696 7l6-6" /> -->
   </svg>
 </template>
 
@@ -38,11 +37,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-svg {
-  &:hover {
-    cursor: pointer;
-  }
-}
-</style>
