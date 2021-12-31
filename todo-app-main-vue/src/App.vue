@@ -14,7 +14,6 @@ export default {
     TheHeader,
     TodoWrapper,
   },
-  setup() {},
 };
 </script>
 

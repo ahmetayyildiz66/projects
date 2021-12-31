@@ -7,7 +7,7 @@
       </IconBase>
     </div>
     <div class="todo__create u-mb-medium">
-      <CheckboxBase class="u-mr" />
+      <TaskNew class="u-mr" :input-text="text" @clearInput="text = ''" />
       <InputBase v-model="text" />
     </div>
     <TodoList />
@@ -19,7 +19,7 @@ import { ref } from 'vue';
 import IconBase from '@/components/IconBase.vue';
 import IconMoon from '@/components/icons/IconMoon.vue';
 import InputBase from '@/components/InputBase.vue';
-import CheckboxBase from '@/components/CheckboxBase.vue';
+import TaskNew from '@/components/TaskNew.vue';
 import TodoList from '@/components/TodoList.vue';
 
 export default {
@@ -28,7 +28,7 @@ export default {
     IconBase,
     IconMoon,
     InputBase,
-    CheckboxBase,
+    TaskNew,
     TodoList,
   },
   setup() {
