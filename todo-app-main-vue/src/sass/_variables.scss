@@ -5,6 +5,7 @@
     --clr-todo-background: hsl(0, 0%, 100%);
     --clr-gray-1: #eeeff4;
     --clr-border-todo-list: hsl(236, 33%, 92%);
+    --clr-gray-2: hsl(235, 9%, 61%);
 
     /* Styles that should be separate variables
         . Linear-gradient
@@ -32,6 +33,9 @@
     --todo-height: 6.4rem;
     --font-size: 1.8rem;
     --padding-todo: 2rem 2.4rem;
+    --padding-filter: 1.6rem 2.4rem 0 2.4rem;
+    --drag-drop: 6rem;
+    --drag-drop-font-size: 1.4rem;
 }
 
 @include respond($bp-mobile) {
@@ -42,5 +46,7 @@
         --font-size: 1.2rem;
         --u-mb-medium: 1.6rem;
         --padding-todo: 1.4rem 2rem;
+        --drag-drop: 4rem;
+        --padding-filter: 1.6rem 2rem 0 2rem;
     }
 }

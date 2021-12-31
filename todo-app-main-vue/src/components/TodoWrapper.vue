@@ -11,6 +11,7 @@
       <InputBase v-model="text" />
     </div>
     <TodoList />
+    <p class="drag-drop">Drag and drop to reorder list</p>
   </div>
 </template>
 
@@ -65,5 +66,12 @@ export default {
     align-items: center;
     height: var(--todo-height);
   }
+}
+
+.drag-drop {
+  text-align: center;
+  margin: var(--drag-drop) 0;
+  font-size: var(--drag-drop-font-size);
+  color: var(--clr-gray-2);
 }
 </style>
