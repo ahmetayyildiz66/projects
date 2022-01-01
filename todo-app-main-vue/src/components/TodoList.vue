@@ -1,12 +1,12 @@
 <template>
   <ul class="todo-list">
-    <TodoListItem v-for="todo in todos" :key="todo.id" :todo="todo" />
+    <TodoListItem v-for="todo in getTodos" :key="todo.id" :todo="todo" />
     <div class="todo__filter">
-      <span>{{ todos.length }} items left</span>
+      <span>{{ getTodos.length }} items left</span>
       <div class="button-group">
-        <button class="btn" @click="activeBtn = 'all'" :class="{'btn--active': activeBtn === 'all'}">All</button>
-        <button class="btn" @click="activeBtn = 'active'" :class="{'btn--active': activeBtn === 'active'}">Active</button>
-        <button class="btn" @click="activeBtn = 'completed'" :class="{'btn--active': activeBtn === 'completed'}">Completed</button>
+        <button class="btn" @click="filterTasks('all')" :class="{'btn--active': activeBtn === 'all'}">All</button>
+        <button class="btn" @click="filterTasks('incomplete')" :class="{'btn--active': activeBtn === 'incomplete'}">Active</button>
+        <button class="btn" @click="filterTasks('completed')" :class="{'btn--active': activeBtn === 'completed'}">Completed</button>
       </div>
       <button class="btn btn--clear" @click="clearTodoList">Clear Completed</button>
     </div>
@@ -26,15 +26,22 @@ export default {
   setup() {
     const activeBtn = ref('all');
 
-    const { todos, clearTasks } = useTask();
+    const { getTodos, clearTasks, setFilterTag } = useTask();
 
     const clearTodoList = () => {
       clearTasks();
     };
+
+    const filterTasks = (status) => {
+      activeBtn.value = status;
+      setFilterTag(status);
+    };
+
     return {
-      todos,
+      getTodos,
       clearTodoList,
       activeBtn,
+      filterTasks,
     };
   },
 };

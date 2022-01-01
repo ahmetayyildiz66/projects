@@ -2,11 +2,11 @@
   <div
     for="checkbox"
     @click="createNewTask"
-    :class="{ 'checkbox-label--active': toggle }"
+    :class="{ 'checkbox-label--active': status === 'completed' }"
     class="checkbox-label"
   >
     <IconBase
-      v-if="toggle"
+      v-if="status === 'completed'"
       class="icon-wrapper"
       icon-name="check"
       width="20"
@@ -28,6 +28,9 @@ export default {
   components: {
     IconBase,
     IconCheck,
+  },
+  props: {
+    status: String,
   },
   emits: ['line-through'],
   setup(_, { emit }) {
@@ -55,6 +58,11 @@ export default {
   border: 1px solid #e3e4f1;
   cursor: pointer;
   margin-right: var(--u-mr);
+
+  &:hover {
+    transition: .3s;
+    border-color: hsla(192, 100%, 67%, 1) hsla(280, 87%, 65%, 1) hsla(280, 87%, 65%, 1) hsla(192, 100%, 67%, 1);
+  }
 
   &--active {
     background-image: linear-gradient(var(--l-grad-checkbox));

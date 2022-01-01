@@ -1,7 +1,17 @@
 <template>
   <li class="todo__item">
-    <CheckboxBase @lineThrough="lineThrough" />
-    <span :class="{ 'active-through': toggle }">{{ todo.task }}</span>
+    <CheckboxBase @lineThrough="lineThrough" :status="todo.status" />
+    <span class="todo__description" :class="{ 'active-through': todo.status === 'completed' }">{{ todo.task }}</span>
+    <IconBase
+      @click="deleteTodo"
+      class="icon-wrapper todo__remove"
+      icon-name="check"
+      width="20"
+      height="20"
+      icon-color="#000"
+    >
+      <IconCross class="icon-check" />
+    </IconBase>
   </li>
 </template>
 
@@ -9,18 +19,26 @@
 import { ref } from 'vue';
 import CheckboxBase from '@/components/CheckboxBase.vue';
 import useTask from '@/composables/useTask';
+import IconBase from '@/components/IconBase.vue';
+import IconCross from '@/components/icons/IconCross.vue';
 
 export default {
   name: 'TodoListItem',
   components: {
     CheckboxBase,
+    IconBase,
+    IconCross,
   },
   props: {
     todo: Object,
   },
   setup(props) {
-    const { updateStatus } = useTask();
+    const { updateStatus, removeTodo } = useTask();
     const toggle = ref(false);
+
+    const deleteTodo = () => {
+      removeTodo(props.todo.id);
+    };
 
     const lineThrough = (val) => {
       toggle.value = val;
@@ -29,6 +47,7 @@ export default {
     return {
       lineThrough,
       toggle,
+      deleteTodo,
     };
   },
 };
@@ -40,6 +59,16 @@ export default {
   padding: var(--padding-todo);
   display: flex;
   align-items: center;
+  cursor: pointer;
+
+  &:hover .todo__remove {
+    visibility: visible;
+  }
+}
+
+.todo__remove {
+  visibility: hidden;
+  margin-left: auto;
 }
 
 .active-through {
