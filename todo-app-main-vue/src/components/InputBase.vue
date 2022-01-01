@@ -30,7 +30,7 @@ export default {
 .input-base {
   border: none;
   font-size: var(--font-size);
-  color: var(--clr-todo-text);
+  color: var(--clr-input-text);
   width: 100%;
   height: 4rem;
 

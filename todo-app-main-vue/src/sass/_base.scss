@@ -14,6 +14,14 @@ html, body {
     overflow-x: hidden;
 }
 
+body {
+    background: var(--clr-container-background);
+}
+
 li {
     list-style: none;
+}
+
+button + button {
+    margin-left: 2rem;
 }

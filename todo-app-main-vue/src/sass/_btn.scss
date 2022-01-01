@@ -1,0 +1,23 @@
+.btn {
+    border: none;
+    background-color: transparent;
+    color: var(--clr-gray-2);
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--clr-btn-hover);
+    }
+
+    &--active {
+        color: var(--clr-btn-active);
+    }
+
+    &--clear {
+        @include respond($bp-mobile) {
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: -0.17px;
+        }
+    }
+}

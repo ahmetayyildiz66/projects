@@ -46,6 +46,7 @@ export default {
 .wrapper {
   margin-top: -23rem;
   grid-column: col-start 4 / span 6;
+  position: relative;
 
   @include respond($bp-mobile) {
     grid-column: center-start / center-end;
@@ -73,5 +74,9 @@ export default {
   margin: var(--drag-drop) 0;
   font-size: var(--drag-drop-font-size);
   color: var(--clr-gray-2);
+
+  @include respond($bp-mobile) {
+    margin-top: 10.5rem;
+  }
 }
 </style>

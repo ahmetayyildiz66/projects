@@ -41,5 +41,6 @@ export default {
 
 .active-through {
   text-decoration: line-through;
+  color: var(--clr-gray-2);
 }
 </style>

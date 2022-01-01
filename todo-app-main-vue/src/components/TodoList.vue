@@ -2,13 +2,13 @@
   <ul class="todo-list">
     <TodoListItem v-for="todo in todos" :key="todo.id" :todo="todo" />
     <div class="todo__filter">
-      <span>5 items left</span>
+      <span>{{ todos.length }} items left</span>
       <div class="button-group">
-        <button>All</button>
-        <button>Active</button>
-        <button>Completed</button>
+        <button class="btn btn--active">All</button>
+        <button class="btn">Active</button>
+        <button class="btn">Completed</button>
       </div>
-      <button>Clear Completed</button>
+      <button class="btn btn--clear">Clear Completed</button>
     </div>
   </ul>
 </template>
@@ -33,9 +33,15 @@ export default {
 
 <style lang="scss" scoped>
 .todo-list {
+  color: var(--clr-todo-text);
   background-color: var(--clr-todo-background);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  font-size: 1.8rem;
+
+  @include respond($bp-mobile) {
+    font-size: 1.2rem;
+  }
 
   padding-bottom: 2rem;
 }
@@ -45,14 +51,26 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  color: var(--clr-gray-2);
+  font-size: 1.4rem;
+
+  @include respond($bp-mobile) {
+    font-size: 1.2rem;
+  }
 
   @include respond($bp-mobile) {
     .button-group {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
       order: 1;
-      flex: 0 0 100%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 4.8rem;
+      bottom: 9rem;
+      background-color: var(--clr-todo-background);
     }
   }
 }
