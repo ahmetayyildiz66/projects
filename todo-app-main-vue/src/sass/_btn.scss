@@ -4,8 +4,9 @@
     color: var(--clr-gray-2);
     font-weight: 700;
     cursor: pointer;
+    height: 100%;
 
-    &:hover {
+    &:hover:not(&--active) {
         color: var(--clr-btn-hover);
     }
 
@@ -14,9 +15,9 @@
     }
 
     &--clear {
+        font-weight: 400;
         @include respond($bp-mobile) {
             font-size: 1.2rem;
-            font-weight: 400;
             letter-spacing: -0.17px;
         }
     }

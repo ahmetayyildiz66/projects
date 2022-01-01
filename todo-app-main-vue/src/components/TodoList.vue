@@ -4,16 +4,17 @@
     <div class="todo__filter">
       <span>{{ todos.length }} items left</span>
       <div class="button-group">
-        <button class="btn btn--active">All</button>
-        <button class="btn">Active</button>
-        <button class="btn">Completed</button>
+        <button class="btn" @click="activeBtn = 'all'" :class="{'btn--active': activeBtn === 'all'}">All</button>
+        <button class="btn" @click="activeBtn = 'active'" :class="{'btn--active': activeBtn === 'active'}">Active</button>
+        <button class="btn" @click="activeBtn = 'completed'" :class="{'btn--active': activeBtn === 'completed'}">Completed</button>
       </div>
-      <button class="btn btn--clear">Clear Completed</button>
+      <button class="btn btn--clear" @click="clearTodoList">Clear Completed</button>
     </div>
   </ul>
 </template>
 
 <script>
+import { ref } from 'vue';
 import TodoListItem from '@/components/TodoListItem.vue';
 import useTask from '@/composables/useTask';
 
@@ -23,9 +24,17 @@ export default {
     TodoListItem,
   },
   setup() {
-    const { todos } = useTask();
+    const activeBtn = ref('all');
+
+    const { todos, clearTasks } = useTask();
+
+    const clearTodoList = () => {
+      clearTasks();
+    };
     return {
       todos,
+      clearTodoList,
+      activeBtn,
     };
   },
 };

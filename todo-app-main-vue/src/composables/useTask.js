@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import data from '@/data.json';
 
 const state = ref({
@@ -15,8 +15,19 @@ export default function useTask() {
     state.value.todos.push(newTask);
   };
 
+  const clearTasks = () => {
+    state.value.todos = state.value.todos.filter((todo) => todo.status === 'incomplete');
+  };
+
+  const updateStatus = (id) => {
+    state.value.todos = state.value.todos.map((todo) => (todo.id === id
+      ? { ...todo, status: todo.status === 'incomplete' ? 'completed' : 'incomplete' } : todo));
+  };
+
   return {
-    todos: state.value.todos,
+    todos: computed(() => state.value.todos),
     addNewTask,
+    clearTasks,
+    updateStatus,
   };
 }

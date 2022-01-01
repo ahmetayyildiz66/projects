@@ -8,6 +8,7 @@
 <script>
 import { ref } from 'vue';
 import CheckboxBase from '@/components/CheckboxBase.vue';
+import useTask from '@/composables/useTask';
 
 export default {
   name: 'TodoListItem',
@@ -17,11 +18,13 @@ export default {
   props: {
     todo: Object,
   },
-  setup() {
+  setup(props) {
+    const { updateStatus } = useTask();
     const toggle = ref(false);
 
     const lineThrough = (val) => {
       toggle.value = val;
+      updateStatus(props.todo.id);
     };
     return {
       lineThrough,
