@@ -1,0 +1,11 @@
+@use "sass:math";
+
+$bp-desktop: 1140px;
+$bp-mobile: 375px;
+
+@mixin respond($breakpoint) {
+    // $breakpointValue: $breakpoint / 16 * 1em
+    @media (max-width: $breakpoint) {
+        @content
+    }
+}

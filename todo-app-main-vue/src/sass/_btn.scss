@@ -1,0 +1,24 @@
+.btn {
+    border: none;
+    background-color: transparent;
+    color: var(--clr-gray-2);
+    font-weight: 700;
+    cursor: pointer;
+    height: 100%;
+
+    &:hover:not(&--active) {
+        color: var(--clr-btn-hover);
+    }
+
+    &--active {
+        color: var(--clr-btn-active);
+    }
+
+    &--clear {
+        font-weight: 400;
+        @include respond($bp-mobile) {
+            font-size: 1.2rem;
+            letter-spacing: -0.17px;
+        }
+    }
+}

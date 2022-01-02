@@ -1,0 +1,67 @@
+:root {
+    // Colors
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-todo-text: hsl(235, 19%, 35%);
+    --clr-input-text: hsl(235, 14%, 26%);
+    --clr-todo-background: hsl(0, 0%, 100%);
+    --clr-container-background: hsl(235, 0%, 98%);
+    --clr-gray-1: #eeeff4;
+    --clr-border-todo-list: hsl(236, 33%, 92%);
+    --clr-gray-2: hsl(235, 9%, 61%);
+    --clr-btn-hover: hsl(235, 19%, 35%);
+    --clr-btn-active: hsl(220, 98%, 61%);
+
+    /* Styles that should be separate variables
+        . Linear-gradient
+        . background-color
+        . todo-list
+            - wrapper background-color
+            - text-color
+            - hover text-color
+    */
+
+    // Linear-gradients
+    --l-grad: hsl(217, 100%, 67%), hsl(280, 83%, 55%);
+    --l-grad-checkbox: hsl(192, 100%, 67%), hsl(280, 87%, 65%);
+
+    // Shadow
+    --box-shadow: 0 .5rem .5rem var(--clr-border-todo-list);
+
+    // Sizes
+    --gutter: 3rem;
+    --container-max-width: 114rem;
+    --bg-image-height-desktop: 30rem;
+    --border-radius: .5rem;
+    --u-mr: 2.4rem;
+    --u-mb-medium: 2.4rem;
+    --todo-height: 6.4rem;
+    --font-size: 1.8rem;
+    --padding-todo: 2rem 2.4rem;
+    --padding-filter: 1.6rem 2.4rem 0 2.4rem;
+    --drag-drop: 6rem;
+    --drag-drop-font-size: 1.4rem;
+}
+
+@include respond($bp-mobile) {
+    :root {
+        --gutter: 2rem;
+        --u-mr: 1.2rem;
+        --todo-height: 4.8rem;
+        --font-size: 1.2rem;
+        --u-mb-medium: 1.6rem;
+        --padding-todo: 1.4rem 2rem;
+        --drag-drop: 4rem;
+        --padding-filter: 1.6rem 2rem 0 2rem;
+    }
+}
+
+[data-theme="dark"] {
+    --clr-container-background: hsl(235, 21%, 11%);
+    --clr-todo-background: hsl(235, 14%, 26%);
+    --clr-gray-1: hsl(0, 0%, 59%);
+    --box-shadow: 0 .5rem .5rem var(--clr-container-background);
+    --clr-todo-text: hsl(235, 39%, 85%);
+    --clr-btn-hover: hsl(236, 32%, 92%);
+    --clr-icon-cross: hsl(235, 16%, 43%);
+    --clr-input-text: hsl(234, 39%, 85%);
+}
