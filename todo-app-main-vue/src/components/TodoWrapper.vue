@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import IconBase from '@/components/IconBase.vue';
 import IconMoon from '@/components/icons/IconMoon.vue';
 import IconSun from '@/components/icons/IconSun.vue';
@@ -39,12 +39,21 @@ export default {
   },
   setup() {
     const text = ref('');
-    const currentTheme = ref('light');
+    const currentTheme = ref(localStorage.getItem('theme'));
 
     const changeTheme = (theme) => {
       document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
       currentTheme.value = theme;
     };
+
+    onMounted(() => {
+      if (localStorage.getItem('theme')) {
+        document.documentElement.setAttribute('data-theme', currentTheme.value);
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        changeTheme('dark');
+      }
+    });
 
     return {
       text,
