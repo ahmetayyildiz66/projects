@@ -1,3 +1,21 @@
-body {
-    background-color: red;
+:root {
+    // colors
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-primary: hsl(180, 29%, 50%);
+    --clr-header-bg: hsl(180, 29%, 50%);
+    --clr-body-bg: hsl(179, 53%, 96%);
+    --clr-label-featured: hsl(180, 14%, 20%);
+
+    // sizes
+    --size-header: 15.6rem;
+    --size-container: 114rem;
+    --size-height-filter-list: 7.2rem;
+    --size-border-radius: .5rem;
+    --size-padding-job-item: 4rem;
+
+    // fonts
+    --font-job-advert: 1.4rem;
+
+    // shadow
+    --shadow-job-item: 0 4px 4px hsla(0, 0%, 0%, 25%);
 }

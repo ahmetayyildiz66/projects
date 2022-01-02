@@ -1,0 +1,10 @@
+.header {
+    height: var(--size-header);
+    background-image: url(../images/bg-header-desktop.svg);
+    background-color: var(--clr-header-bg);
+}
+
+.container {
+    width: var(--size-container);
+    margin: 0 auto;
+}

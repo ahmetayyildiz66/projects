@@ -1,0 +1,11 @@
+.filter-list {
+    min-height: var(--size-height-filter-list);
+    margin-top: -2.6rem;
+    background-color: var(--clr-white);
+    display: flex;
+    align-items: center;
+    padding: 0 4rem;
+    margin-bottom: 4rem;
+    box-shadow: var(--shadow-job-item);
+    border-radius: var(--size-border-radius);
+}
