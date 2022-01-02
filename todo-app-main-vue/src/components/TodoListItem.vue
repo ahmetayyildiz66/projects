@@ -8,7 +8,7 @@
       icon-name="check"
       width="20"
       height="20"
-      icon-color="#000"
+      icon-color="var(--clr-icon-cross)"
     >
       <IconCross class="icon-check" />
     </IconBase>
@@ -69,6 +69,7 @@ export default {
 .todo__remove {
   visibility: hidden;
   margin-left: auto;
+  stroke: var(--clr-icon-cross);
 }
 
 .active-through {

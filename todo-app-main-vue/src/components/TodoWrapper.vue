@@ -2,8 +2,11 @@
   <div class="wrapper">
     <div class="todo u-mb">
       <h2 class="heading-secondary">Todo</h2>
-      <IconBase icon-name="moon" width="26" height="26">
+      <IconBase v-if="currentTheme === 'light'" icon-name="moon" class="theme" @click="changeTheme('dark')" width="26" height="26">
         <IconMoon />
+      </IconBase>
+      <IconBase v-else icon-name="sun" class="theme" @click="changeTheme('light')" width="26" height="26">
+        <IconSun />
       </IconBase>
     </div>
     <div class="todo__create u-mb-medium">
@@ -19,6 +22,7 @@
 import { ref } from 'vue';
 import IconBase from '@/components/IconBase.vue';
 import IconMoon from '@/components/icons/IconMoon.vue';
+import IconSun from '@/components/icons/IconSun.vue';
 import InputBase from '@/components/InputBase.vue';
 import TaskNew from '@/components/TaskNew.vue';
 import TodoList from '@/components/TodoList.vue';
@@ -28,15 +32,24 @@ export default {
   components: {
     IconBase,
     IconMoon,
+    IconSun,
     InputBase,
     TaskNew,
     TodoList,
   },
   setup() {
     const text = ref('');
+    const currentTheme = ref('light');
+
+    const changeTheme = (theme) => {
+      document.documentElement.setAttribute('data-theme', theme);
+      currentTheme.value = theme;
+    };
 
     return {
       text,
+      changeTheme,
+      currentTheme,
     };
   },
 };
@@ -60,7 +73,7 @@ export default {
   color: var(--clr-white);
 
   &__create {
-    background-color: var(--clr-white);
+    background-color: var(--clr-todo-background);
     padding: var(--padding-todo);
     border-radius: var(--border-radius);
     display: flex;
@@ -78,5 +91,9 @@ export default {
   @include respond($bp-mobile) {
     margin-top: 10.5rem;
   }
+}
+
+.theme {
+  cursor: pointer;
 }
 </style>

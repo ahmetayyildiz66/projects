@@ -28,6 +28,7 @@ export default {
 
 <style lang="scss" scoped>
 .input-base {
+  background: var(--clr-todo-background);
   border: none;
   font-size: var(--font-size);
   color: var(--clr-input-text);
