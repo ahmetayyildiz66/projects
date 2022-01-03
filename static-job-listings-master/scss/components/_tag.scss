@@ -1,0 +1,11 @@
+.tag {
+    padding: 1rem 1.2rem;
+    background-color: var(--clr-tertiary);
+    font-weight: 700;
+    color: var(--clr-primary);
+    font-size: 1.3rem;
+
+    &:not(:last-child) {
+        margin-right: 2.4rem;
+    }
+}

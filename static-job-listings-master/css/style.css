@@ -2,9 +2,11 @@
 :root {
   --clr-white: hsl(0, 0%, 100%);
   --clr-primary: hsl(180, 29%, 50%);
-  --clr-header-bg: hsl(180, 29%, 50%);
+  --clr-secondary: hsl(180, 29%, 50%);
+  --clr-tertiary: hsl(180, 42%, 93%);
   --clr-body-bg: hsl(179, 53%, 96%);
   --clr-label-featured: hsl(180, 14%, 20%);
+  --clr-grey-1: hsl(180, 8%, 52%);
   --size-header: 15.6rem;
   --size-container: 114rem;
   --size-height-filter-list: 7.2rem;
@@ -15,6 +17,9 @@
 
 body {
   font-family: 'Spartan', sans-serif; }
+
+.heading-secondary {
+  font-size: 1.8rem; }
 
 *, *::before, *::after {
   margin: 0;
@@ -34,11 +39,17 @@ li {
 .header {
   height: var(--size-header);
   background-image: url(../images/bg-header-desktop.svg);
-  background-color: var(--clr-header-bg); }
+  background-color: var(--clr-secondary); }
 
 .container {
   width: var(--size-container);
   margin: 0 auto; }
+
+.u-mb-medium {
+  margin-bottom: .8rem; }
+
+.u-mr-large {
+  margin-right: 2.4rem; }
 
 .filter-list {
   min-height: var(--size-height-filter-list);
@@ -63,11 +74,14 @@ li {
     flex-direction: column;
     margin-left: 2.4rem; }
   .job-post__tags {
-    margin-left: auto; }
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between; }
   .job-post__advert {
     font-size: var(--font-job-advert);
     font-weight: 700;
-    justify-content: flex-start; }
+    justify-content: flex-start;
+    margin-bottom: 1.2rem; }
   .job-post__label {
     border-radius: 1.2rem;
     color: var(--clr-white);
@@ -82,3 +96,28 @@ li {
   .job-post__company {
     font-weight: 700;
     color: var(--clr-primary); }
+  .job-post--new {
+    border-left: 5px solid var(--clr-primary);
+    border-radius: var(--size-border-radius); }
+
+.job-description > span {
+  position: relative;
+  font-size: 1.5rem;
+  margin-right: 3.6rem;
+  color: var(--clr-grey-1); }
+  .job-description > span:not(:last-child)::after {
+    content: '.';
+    position: absolute;
+    color: black;
+    right: -2.8rem;
+    bottom: -.5rem;
+    font-size: 4rem; }
+
+.tag {
+  padding: 1rem 1.2rem;
+  background-color: var(--clr-tertiary);
+  font-weight: 700;
+  color: var(--clr-primary);
+  font-size: 1.3rem; }
+  .tag:not(:last-child) {
+    margin-right: 2.4rem; }
