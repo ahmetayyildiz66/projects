@@ -1,0 +1,10 @@
+.separator {
+    display: none;
+
+    @include respond($bp-mobile) {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid var(--clr-grey-2);
+        margin: 1.6rem 0;
+    }
+}

@@ -13,6 +13,11 @@ body {
     background-color: var(--clr-body-bg);
 }
 
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
 li {
     list-style: none;
 }

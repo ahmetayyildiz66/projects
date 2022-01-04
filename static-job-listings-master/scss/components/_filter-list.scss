@@ -8,4 +8,8 @@
     margin-bottom: 4rem;
     box-shadow: var(--shadow-job-item);
     border-radius: var(--size-border-radius);
+
+    @include respond($bp-mobile) {
+        display: none;
+    }
 }

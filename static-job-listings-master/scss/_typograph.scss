@@ -6,4 +6,8 @@ body {
 
 .heading-secondary {
     font-size: 1.8rem;
+
+    @include respond($bp-mobile) {
+        font-size: 1.5rem;
+    }
 }

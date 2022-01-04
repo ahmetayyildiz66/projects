@@ -1,0 +1,8 @@
+$bp-desktop: 1366px;
+$bp-mobile: 376px;
+
+@mixin respond($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
