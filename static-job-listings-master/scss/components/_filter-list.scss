@@ -10,6 +10,6 @@
     border-radius: var(--size-border-radius);
 
     @include respond($bp-mobile) {
-        display: none;
+        // display: none;
     }
 }

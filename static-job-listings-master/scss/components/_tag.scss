@@ -5,6 +5,12 @@
     color: var(--clr-primary);
     font-size: 1.3rem;
 
+    @include respond($bp-mobile) {
+        // &:first-child {
+        //     // margin-top: 1.6rem;
+        // }
+    }
+
     &:not(:last-child) {
         margin-right: 2.4rem;
     }
